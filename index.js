@@ -8,8 +8,7 @@ mongoDB();
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin","https://musical-mousse-1a1301.netlify.app/");
     res.header(
-        "Access-Control-Allow-Origin",
-        "Origin, X-Requested-With, Content-Type, Accept"
+        "Access-Control-Allow-Origin"
     );
     next();
 })
