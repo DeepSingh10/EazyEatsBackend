@@ -6,14 +6,12 @@ const port = process.env.port || 5000
 const mongoDB = require('./db')
 mongoDB();
 
-app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin","https://musical-mousse-1a1301.netlify.app");
-    res.header(
-        "Access-Control-Allow-Origin"
-    );
-    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET", true);
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://musical-mousse-1a1301.netlify.app");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
     next();
-})
+});
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
